@@ -148,6 +148,8 @@
 		<profile>
 			<id>dev</id>
 			<properties>
+				<spring.pid.file>D:/Temp/ducati/springboot.pid</spring.pid.file>
+				<path.log.logback>D:/Temp/ducati</path.log.logback>
 				<log.level>INFO</log.level>
 			</properties>
 			<activation>
@@ -157,6 +159,8 @@
 		<profile>
 			<id>pro</id>
 			<properties>
+				<spring.pid.file>/logs/ducati/springboot.pid</spring.pid.file>
+				<path.log.logback>/logs/ducati</path.log.logback>
 				<log.level>INFO</log.level>
 			</properties>
 		</profile>

@@ -1,0 +1,31 @@
+<html>
+	<head>
+	    <meta charset="UTF-8" />
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	    <title>Test</title>
+	    <meta name="description" content="A responsive bootstrap 4 admin dashboard template by hencework" />
+	</head>
+	<body>
+		<input type="button" value="调接口" onClick="call()">
+	    <script type="text/javascript">
+	    	function call() {
+	    		var req = window.XMLHttpRequest?new XMLHttpRequest():new ActiveXObject("Microsoft.XMLHTTP");
+				req.onreadystatechange = function() {
+					if(req.readyState==4) {
+						if(req.status==200) {
+							var data = JSON.parse(req.responseText);
+							alert(data.data);
+						} else {
+							console.log(req);
+							alert(req.status+"---"+req.responseText);
+						}
+					}
+				};
+				req.open("POST", "http://localhost:8080/test/abc", true);
+				req.setRequestHeader("x-requested-with", "XMLHttpRequest");
+				// req.withCredentials = true;
+				req.send();
+	    	}
+	    </script>
+	</body>
+</html>
