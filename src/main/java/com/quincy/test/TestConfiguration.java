@@ -31,7 +31,7 @@ public class TestConfiguration implements WebMvcConfigurer, HandlerInterceptor {
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
-		response.setHeader("Access-Control-Allow-Origin", "http://www.jep8566.com");
+		response.setHeader("Access-Control-Allow-Origin", "http://*.jep8566.com");
 		response.setHeader("Access-Control-Allow-Headers", "Authorization, x-requested-with, content-type, x-token");
 //		response.setHeader("Access-Control-Allow-Credentials", "true");
 //		response.setHeader("Access-Control-Allow-Methods", "POST, PUT, GET, OPTIONS, DELETE");
