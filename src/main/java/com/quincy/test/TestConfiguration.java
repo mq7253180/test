@@ -21,7 +21,7 @@ public class TestConfiguration implements WebMvcConfigurer, HandlerInterceptor {
 	@Override
 	public void addCorsMappings(CorsRegistry registry) {
 		registry.addMapping("/**")
-			.allowedOriginPatterns("http://*.xxx.com");
+			.allowedOriginPatterns("http://pc.jep8566.*");
 //			.allowedOriginPatterns("http://10.200.*");
 //			.allowedOriginPatterns("http://jep8566.com", "http://*.jep8566.com", "http://www.xxx.com", "http://localhost:*")
 //			.allowCredentials(true)
@@ -32,7 +32,6 @@ public class TestConfiguration implements WebMvcConfigurer, HandlerInterceptor {
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
-		request.getHeader("Origin");
 //		response.setHeader("Access-Control-Allow-Origin", "http://pc.jep8566.com");
 //		response.setHeader("Access-Control-Allow-Headers", "Authorization, x-requested-with, content-type, x-token");
 //		response.setHeader("Access-Control-Allow-Credentials", "true");
