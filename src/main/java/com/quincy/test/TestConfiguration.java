@@ -21,7 +21,7 @@ public class TestConfiguration implements WebMvcConfigurer, HandlerInterceptor {
 	@Override
 	public void addCorsMappings(CorsRegistry registry) {
 		registry.addMapping("/**")
-			.allowedOriginPatterns("http://pc.jep8566.*");
+			.allowedOriginPatterns("http://pc.jep8566.*", "http://10.200.*");
 //			.allowedOriginPatterns("http://10.200.*");
 //			.allowedOriginPatterns("http://jep8566.com", "http://*.jep8566.com", "http://www.xxx.com", "http://localhost:*")
 //			.allowCredentials(true)
