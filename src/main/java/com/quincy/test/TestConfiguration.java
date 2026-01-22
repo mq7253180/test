@@ -1,5 +1,6 @@
 package com.quincy.test;
 
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.lang.Nullable;
 import org.springframework.web.servlet.HandlerInterceptor;
@@ -7,6 +8,9 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
+import com.quincy.test.auto.FooTemplate;
+import com.quincy.test.auto.Template;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -43,5 +47,29 @@ public class TestConfiguration implements WebMvcConfigurer, HandlerInterceptor {
 	public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler,
 				@Nullable ModelAndView modelAndView) throws Exception {
 		
+	}
+
+	@Template
+	@Bean
+	public FooTemplate fooTemplate1() {
+		FooTemplate t = new FooTemplate();
+		t.setName("1111");
+		return t;
+	}
+
+	@Template
+	@Bean
+	public FooTemplate fooTemplate2() {
+		FooTemplate t = new FooTemplate();
+		t.setName("222");
+		return t;
+	}
+
+	@Template
+	@Bean
+	public FooTemplate fooTemplate3() {
+		FooTemplate t = new FooTemplate();
+		t.setName("333");
+		return t;
 	}
 }
